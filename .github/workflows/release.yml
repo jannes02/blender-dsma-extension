@@ -1,0 +1,32 @@
+name: Release
+
+# Build the add-on zip and publish a GitHub Release whenever a version tag
+# (e.g. v1.0.0) is pushed.
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write # required to create the release and upload the asset
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Package add-on
+        # "Build" is just zipping the source folder (it is pure Python that
+        # Blender interprets at runtime). The folder containing
+        # blender_manifest.toml must be the top-level entry inside the zip.
+        run: |
+          zip -r "nitro_engine_dsma_exporter-${GITHUB_REF_NAME}.zip" \
+            io_export_nds_dsma -x '*/__pycache__/*'
+
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: nitro_engine_dsma_exporter-*.zip
+          generate_release_notes: true

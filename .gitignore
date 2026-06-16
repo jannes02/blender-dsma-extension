@@ -1,0 +1,6 @@
+# Build artifact: the add-on zip is produced per release, not committed.
+nitro_engine_dsma_exporter*.zip
+
+# Python
+__pycache__/
+*.pyc
