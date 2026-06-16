@@ -7,11 +7,15 @@ without any intermediate `.md5mesh` / `.md5anim` files. One export produces:
 - `model.dsa` — the base (rest) pose, so the model is displayable on its own
 - `model_<action>.dsa` — one file per animation/action
 - `graphics/<texture>.png` + `graphics/<texture>.grit` — every texture used by
-  the mesh, plus a grit configuration (`-gx -gb -gB16 -gT!`, 16-bit + alpha)
+  the mesh, packed as atlas + plus a grit configuration (`-gx -gb -gB16 -gT!`, 16-bit + alpha)
 
-The conversion math is taken verbatim from Nitro Engine's `md5_to_dsma` tool, so
+The conversion math is taken verbatim from Nitro Engine's [md5_to_dsma](https://github.com/AntonioND/nitro-engine/tree/master/tools/md5_to_dsma) tool, so
 the binary output is byte-for-byte identical to running that tool on an
 equivalent MD5 export (verified against the bundled `robot` example).
+
+## Notice
+
+Developed with AI assistance (Claude).
 
 ## Requirements
 
