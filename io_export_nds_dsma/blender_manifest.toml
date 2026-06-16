@@ -4,10 +4,10 @@ id = "nitro_engine_dsma_exporter"
 version = "1.0.0"
 name = "Nitro Engine DSMA exporter"
 tagline = "Export rigged meshes to Nitro Engine DSM/DSA, PNG and grit"
-maintainer = "Nitro Engine community"
+maintainer = "Jannes van Rueschen"
 type = "add-on"
 
-website = "https://github.com/AntonioND/nitro-engine"
+website = "https://github.com/jannes02/blender-dsma-extension"
 
 tags = ["Import-Export", "Pipeline"]
 
